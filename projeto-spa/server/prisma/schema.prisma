@@ -18,6 +18,7 @@ model Feedback {
   screenshot String?
   userName   String
   userMail   String
+  date       String?
 
 
 

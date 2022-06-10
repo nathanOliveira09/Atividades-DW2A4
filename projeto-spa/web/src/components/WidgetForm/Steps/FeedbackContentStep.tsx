@@ -22,7 +22,12 @@ export function FeedbackContentStep({
     const [comment, setComment] = useState('')
     const [userName, setUserName] = useState('')
     const [userMail, setUserMail] = useState('')
-
+    
+    var currentdate = new Date();
+    var datetime = currentdate.getDay() + "/" + currentdate.getMonth() 
+    + "/" + currentdate.getFullYear() + " @ " 
+    + currentdate.getHours() + ":" 
+    + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
     const feedbackTypeInfo = feedbackTypes[feedbackType]
 
@@ -37,6 +42,7 @@ export function FeedbackContentStep({
 	        screenshot,
             userName,
             userMail,
+            datetime,
         });
         setIsSendingFeedback(false);
         // fetch(`http://localhost:3333/feedbacks`,{
